@@ -1,30 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Music-Beat</title>
+
+    <style>
+
+        body{
+            background-color: rgba(156, 9, 146, 0.875);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            min-height: 170vh;
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 40px;
+            font-size: 45px;
+        }
+
+        .mensaje{
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
+            animation: brillo 1s infinite alternate;
+        }
+
+        @keyframes brillo{
+
+            from{
+                opacity: 0.5;
+            }
+
+            to{
+                opacity: 1;
+            }
+
+        }
+        .contenido{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .datos{
+            width: 55%;
+            font-size: 22px;
+            line-height: 1.8;
+        }
+
+        .datos h2{
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .datos ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        .datos li{
+            margin-bottom: 20px;
+            background-color: rgba(255,255,255,0.1);
+            padding: 18px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .datos li:hover{
+            transform: scale(1.03);
+        }
+
+        .imagenes{
+            width: 35%;
+            text-align: center;
+        }
+
+        .imagenes img{
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .dibujo{
+            margin-top: 40px;
+        }
+
+        .dibujo img{
+            width: 80%;
+        }
+
+        .botones{
+            padding: 20px 40px;
+            margin-top: 80px;
+        }
+
+        a{
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            margin-right: 40px;
+        }
+
+        a:hover{
+            color: yellow;
+        }
+
+        /* ANIMACIÓN */
+
+        @keyframes subir {
+
+            0%{
+                transform: translateY(0px);
+                opacity: 1;
+            }
+
+            100%{
+                transform: translateY(-120px);
+                opacity: 0;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body id="momento2" >
+<body id="momento2">
 
- <body style="background-color: rgba(156, 9, 146, 0.875);"></body>
- 
- <br>
- <br>
- <br>
+    <h1>Exploremos algunos datos curiosos</h1>
 
-       <a href="index.html" style="font-size: 30px; padding: 20px 40px; display: inline-block; color: white; text-decoration: none;">
-  ⏮ Volver 
-</a>
-       <br>
-     <br>
-     <br>
-     <br>
-     <a href="momento3.html" style="font-size: 30px; padding: 20px 40px; display: inline-block; color: white; text-decoration: none;">
-  Siguiente ⏭
-<br>
-<br>
-<img src="assets/Drums-colors.png" alt="Drums" width="30%" align="right">
+
+    <div class="mensaje">
+        Haz click en cualquier parte de la pantalla
+    </div>
+
+    <div class="contenido">
+
+        <div class="datos">
+
+            <h2>Fun facts de batería</h2>
+
+            <ul>
+
+                <li>
+                    <b>La batería moderna nació en Estados Unidos:</b>
+                    fue creada a principios del siglo XX mezclando
+                    instrumentos de diferentes culturas.
+                </li>
+
+                <li>
+                    <b>Un baterista puede quemar muchas calorías:</b>
+                    tocar batería durante una hora puede quemar entre
+                    400 y 600 calorías.
+                </li>
+
+                <li>
+                    <b>Se usan las cuatro extremidades:</b>
+                    los bateristas coordinan manos y pies al mismo tiempo.
+                </li>
+
+                <li>
+                    <b>El bombo produce los sonidos más graves:</b>
+                    es el tambor más grande de la batería
+                    y se toca con el pie.
+                </li>
+
+                <li>
+                    <b>Existen baterías electrónicas:</b>
+                    pueden conectarse a computadores y parlantes.
+                </li>
+
+                <li>
+                    <b>Las baquetas pueden ser de distintos materiales:</b>
+                    madera, plástico o fibra de carbono.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="imagenes">
+
+            <img src="assets/Drums-colors.png" alt="Drums">
+
+            <div class="dibujo">
+
+                <img src="assets/Dibujo .png" alt="Dibujo">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="botones">
+
+        <a href="index.html">
+            ⏮ Volver
+        </a>
+
+        <a href="momento3.html">
+            Siguiente ⏭
+        </a>
+
+    </div>
+
+
+    <script>
+
+        document.addEventListener("click", function(e){
+
+            const nota = document.createElement("div");
+
+            const simbolos = ["♪", "♫", "♩", "♬"];
+
+            nota.innerHTML =
+            simbolos[Math.floor(Math.random() * simbolos.length)];
+
+            nota.style.position = "fixed";
+            nota.style.left = e.clientX + "px";
+            nota.style.top = e.clientY + "px";
+
+            nota.style.fontSize = "35px";
+            nota.style.color = "yellow";
+            nota.style.pointerEvents = "none";
+
+            nota.style.animation =
+            "subir 1.5s linear forwards";
+
+            document.body.appendChild(nota);
+
+            setTimeout(() => {
+                nota.remove();
+            }, 1500);
+
+        });
+
+    </script>
+
 </body>
+
 </html>

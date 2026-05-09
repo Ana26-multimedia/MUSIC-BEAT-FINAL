@@ -23,5 +23,41 @@
   Siguiente ⏭
 </a>
 
+
+
+
+    <script>
+
+        document.addEventListener("click", function(e){
+
+            const nota = document.createElement("div");
+
+            const simbolos = ["♪", "♫", "♩", "♬"];
+
+            nota.innerHTML =
+            simbolos[Math.floor(Math.random() * simbolos.length)];
+
+            nota.style.position = "fixed";
+            nota.style.left = e.clientX + "px";
+            nota.style.top = e.clientY + "px";
+
+            nota.style.fontSize = "35px";
+            nota.style.color = "yellow";
+            nota.style.pointerEvents = "none";
+
+            nota.style.animation =
+            "subir 1.5s linear forwards";
+
+            document.body.appendChild(nota);
+
+            setTimeout(() => {
+                nota.remove();
+            }, 1500);
+
+        });
+
+    </script>
+
 </body>
+
 </html>
