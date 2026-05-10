@@ -21,22 +21,16 @@
         }
 
         .titulo{
-
             color: white;
-
             font-size: 50px;
-
             animation: brillo 1.5s infinite alternate;
-
         }
 
         @keyframes brillo{
-
             from{
                 opacity: 0.7;
                 text-shadow: 0 0 5px white;
             }
-
             to{
                 opacity: 1;
                 text-shadow:
@@ -44,7 +38,18 @@
                 0 0 20px rgb(113, 181, 236),
                 0 0 40px rgb(113, 181, 236);
             }
+        }
 
+        .cuadro-texto{
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
 
         .texto{
@@ -54,7 +59,6 @@
             font-size: 20px;
             margin-top: 40px;
         }
-
 
         .contenedor{
             position: relative;
@@ -67,7 +71,6 @@
             width: 100%;
         }
 
-
         .punto{
             position: absolute;
             width: 18px;
@@ -77,7 +80,6 @@
             cursor: pointer;
             border: 2px solid black;
         }
-
 
         .comentario{
             display: none;
@@ -90,7 +92,6 @@
             font-size: 14px;
         }
 
-
         .boton{
             font-size: 30px;
             padding: 20px 40px;
@@ -102,37 +103,24 @@
         }
 
         .contenedor-boton{
-
             display: flex;
-
             justify-content: center;
-
             margin-top: 50px;
         }
 
         .boton-sonidos{
-
             background-color: rgb(113, 181, 236);
-
             color: white;
-
             font-size: 28px;
-
             padding: 20px 40px;
-
             border: none;
-
             border-radius: 20px;
-
             cursor: pointer;
-
             font-weight: bold;
         }
 
         .boton-sonidos:hover{
-
             background-color: rgb(85, 155, 212);
-
         }
 
     </style>
@@ -143,26 +131,19 @@
 
     <br>
 
-
     <h1 class="titulo">¡Bienvenid@s a Music-Beat! ✌︎㋡</h1>
 
     <br>
 
-
-    <center>
-
+    <div class="cuadro-texto">
         <p>
             En esta página, exploraremos datos curiosos de la batería,
             comprenderemos este instrumento y haremos que el usuario
             tenga una experiencia cercana a este maravilloso instrumento.
         </p>
+    </div>
 
-    </center>
-
-    <br>
-    <br>
-
-    <!-- TEXTO -->
+    <br><br>
 
     <div class="texto">
 
@@ -176,168 +157,89 @@
 
     </div>
 
-
-
     <div class="contenedor">
 
         <img src="assets/bateria.png" alt="Drums">
 
-
-
-        <div class="punto"
-        style="top: 40px; left: 90px;"
-        onclick="mostrar('c1')"></div>
-
-        <div class="comentario"
-        id="c1"
-        style="top: 60px; left: 120px;">
-
+        <div class="punto" style="top: 40px; left: 90px;" onclick="mostrar('c1')"></div>
+        <div class="comentario" id="c1" style="top: 60px; left: 120px;">
             <b>Crash:</b> platillo usado para acentos fuertes.
-
         </div>
 
-
-        <div class="punto"
-        style="top: 180px; left: 30px;"
-        onclick="mostrar('c2')"></div>
-
-        <div class="comentario"
-        id="c2"
-        style="top: 200px; left: 60px;">
-
+        <div class="punto" style="top: 180px; left: 30px;" onclick="mostrar('c2')"></div>
+        <div class="comentario" id="c2" style="top: 200px; left: 60px;">
             <b>Hi-Hat:</b> platillos que marcan el ritmo.
-
         </div>
 
-
-        <div class="punto"
-        style="top: 300px; left: 190px;"
-        onclick="mostrar('c3')"></div>
-
-        <div class="comentario"
-        id="c3"
-        style="top: 320px; left: 220px;">
-
+        <div class="punto" style="top: 300px; left: 190px;" onclick="mostrar('c3')"></div>
+        <div class="comentario" id="c3" style="top: 320px; left: 220px;">
             <b>Redoblante:</b> tambor principal del ritmo.
-
         </div>
 
-
-        <div class="punto"
-        style="top: 160px; left: 280px;"
-        onclick="mostrar('c4')"></div>
-
-        <div class="comentario"
-        id="c4"
-        style="top: 180px; left: 310px;">
-
+        <div class="punto" style="top: 160px; left: 280px;" onclick="mostrar('c4')"></div>
+        <div class="comentario" id="c4" style="top: 180px; left: 310px;">
             <b>Tom 1:</b> tambor agudo superior.
-
         </div>
 
-        <div class="punto"
-        style="top: 150px; left: 390px;"
-        onclick="mostrar('c5')"></div>
-
-        <div class="comentario"
-        id="c5"
-        style="top: 170px; left: 420px;">
-
+        <div class="punto" style="top: 150px; left: 390px;" onclick="mostrar('c5')"></div>
+        <div class="comentario" id="c5" style="top: 170px; left: 420px;">
             <b>Tom 2:</b> segundo tom superior.
-
         </div>
 
-        <div class="punto"
-        style="top: 390px; left: 320px;"
-        onclick="mostrar('c6')"></div>
-
-        <div class="comentario"
-        id="c6"
-        style="top: 410px; left: 350px;">
-
+        <div class="punto" style="top: 390px; left: 320px;" onclick="mostrar('c6')"></div>
+        <div class="comentario" id="c6" style="top: 410px; left: 350px;">
             <b>Bombo:</b> produce los sonidos graves.
-
         </div>
 
-
-        <div class="punto"
-        style="top: 280px; left: 500px;"
-        onclick="mostrar('c7')"></div>
-
-        <div class="comentario"
-        id="c7"
-        style="top: 300px; left: 350px;">
-
+        <div class="punto" style="top: 280px; left: 500px;" onclick="mostrar('c7')"></div>
+        <div class="comentario" id="c7" style="top: 300px; left: 350px;">
             <b>Floor Tom:</b> tambor grave lateral.
-
         </div>
 
-
-        <div class="punto"
-        style="top: 90px; left: 520px;"
-        onclick="mostrar('c8')"></div>
-
-        <div class="comentario"
-        id="c8"
-        style="top: 110px; left: 350px;">
-
+        <div class="punto" style="top: 90px; left: 520px;" onclick="mostrar('c8')"></div>
+        <div class="comentario" id="c8" style="top: 110px; left: 350px;">
             <b>Ride:</b> platillo usado para acompañamiento y marcar el ritmo.
-
         </div>
 
     </div>
-
 
     <div class="contenedor-boton">
 
         <button class="boton-sonidos" onclick="sonido()">
-            ¡Descubre cómo suena una batería real! 🥁
+            ¡Descubre cómo suena una batería real!
         </button>
 
     </div>
-
-
 
     <audio id="audioBateria">
         <source src="assets/Drums-only.mp3" type="audio/mpeg">
     </audio>
 
-
-
-        <a href="momento2.html" class="boton">
-            ⏭ Siguiente
-        </a>
-
-    </center>
+    <a href="momento2.html" class="boton">
+        ⏭ Siguiente
+    </a>
 
     <script>
 
         function mostrar(id){
-
             let comentario = document.getElementById(id);
 
             if(comentario.style.display == "block"){
                 comentario.style.display = "none";
-            }
-
-            else{
+            } else {
                 comentario.style.display = "block";
             }
-
         }
 
         function sonido(){
-
             let audio = document.getElementById("audioBateria");
-
             audio.currentTime = 0;
-
             audio.play();
-
         }
+        
+  <p id="saludo"></p>
 
     </script>
 
 </body>
-
 </html>

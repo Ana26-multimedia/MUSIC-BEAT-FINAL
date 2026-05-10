@@ -8,36 +8,46 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        .subtitulo{
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            margin-top: 10px;
+            opacity: 0.85;
+            font-style: italic;
+            text-shadow: 0 0 8px rgba(0,0,0,0.4);
+        }
+
+        .titulo{
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+
 </head>
 
 <body id="momento5" style="background-color: rgba(156, 9, 146, 0.875);">
 
-
-
     <h1 class="titulo">
-        ¡Explora como suena la batería y crea tu propio ritmo! 🥁
+        ¡Explora como suena la batería y crea tu propio ritmo! 🤪
     </h1>
 
     <p class="subtitulo">
-        Haz click sobre cada instrumento para escuchar su sonido 🤪
+        Haz click sobre cada instrumento para escuchar su sonido 
     </p>
 
     <div class="drum-set">
 
         <div class="cymbal-row">
-
             <div class="instrument cymbal left-cymbal" id="crash"></div>
-
             <div class="instrument cymbal right-cymbal" id="ride"></div>
-
         </div>
 
         <div class="drum-group">
-
             <div class="instrument drum snare" id="snare"></div>
-
             <div class="instrument drum tom" id="tom"></div>
-
         </div>
 
         <div class="instrument drum kick" id="kick"></div>
@@ -56,6 +66,7 @@
 
     </div>
 
+    
     <script src="script.js"></script>
 
 </body>

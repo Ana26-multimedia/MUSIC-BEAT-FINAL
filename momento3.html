@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+]<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -7,7 +7,6 @@
     <title>Grandes bateristas</title>
 
     <style>
-
         body{
             background-color: rgba(156, 9, 146, 0.875);
             color: white;
@@ -15,23 +14,23 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            overflow-y: hidden;
         }
 
         h1{
             text-align: center;
             font-size: 50px;
             margin-top: 40px;
-
             animation: brillo 1.5s infinite alternate;
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes brillo{
-
             from{
                 opacity: 0.7;
                 text-shadow: 0 0 5px white;
             }
-
             to{
                 opacity: 1;
                 text-shadow:
@@ -39,7 +38,6 @@
                 0 0 20px rgb(113, 181, 236),
                 0 0 40px rgb(113, 181, 236);
             }
-
         }
 
         .contenedor{
@@ -49,8 +47,9 @@
             flex-wrap: wrap;
             margin-top: 60px;
             padding: 20px;
+            position: relative;
+            z-index: 2;
         }
-
 
         .card{
             width: 300px;
@@ -80,11 +79,11 @@
             line-height: 1.6;
         }
 
-      
-
         .botones{
             margin-top: 60px;
             padding: 20px 40px;
+            position: relative;
+            z-index: 2;
         }
 
         a{
@@ -98,122 +97,91 @@
             color: yellow;
         }
 
-     
-        @keyframes subir {
+        /* EMOJIS CAÍENDO */
+        .emoji{
+            position: fixed;
+            top: -50px;
+            font-size: 30px;
+            animation: caer linear forwards;
+            pointer-events: none;
+            z-index: 1;
+        }
 
+        @keyframes caer{
+            to{
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes subir {
             0%{
                 transform: translateY(0px);
                 opacity: 1;
             }
-
             100%{
                 transform: translateY(-120px);
                 opacity: 0;
             }
-
         }
-
     </style>
-
 </head>
 
 <body id="momento3">
 
-    <h1>Estos son algunos de los grandes bateristas</h1>
+<h1>Estos son algunos de los grandes bateristas</h1>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-        <div class="card">
-
-            <img src="assets/Ringo Starr.png" alt="Ringo Starr">
-
-            <h2>Ringo Starr</h2>
-
-            <p>
-                Fue el baterista de The Beatles.
-                Es reconocido por su estilo simple,
-                creativo y muy influyente en la historia del rock.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <img src="assets/Phil Collins .png" alt="Phil Collins">
-
-            <h2>Phil Collins</h2>
-
-            <p>
-                Baterista y cantante de Genesis.
-                Es famoso por su técnica,
-                coordinación y grandes canciones.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <img src="assets/roger taylor.png" alt="Roger Taylor">
-
-            <h2>Roger Taylor</h2>
-
-            <p>
-                Baterista de Queen.
-                Destaca por su energía,
-                velocidad y potencia en el escenario.
-            </p>
-
-        </div>
-
+    <div class="card">
+        <img src="assets/Ringo Starr.png" alt="Ringo Starr">
+        <h2>Ringo Starr</h2>
+        <p>Fue el baterista de The Beatles. Es reconocido por su estilo simple, creativo y muy influyente en la historia del rock.</p>
     </div>
 
-    <!-- BOTONES -->
-
-    <div class="botones">
-
-        <a href="momento2.html">
-            ⏮ Volver
-        </a>
-
-        <a href="momento4.html">
-            Siguiente ⏭
-        </a>
-
+    <div class="card">
+        <img src="assets/Phil Collins .png" alt="Phil Collins">
+        <h2>Phil Collins</h2>
+        <p>Baterista y cantante de Genesis. Es famoso por su técnica, coordinación y grandes canciones.</p>
     </div>
 
+    <div class="card">
+        <img src="assets/roger taylor.png" alt="Roger Taylor">
+        <h2>Roger Taylor</h2>
+        <p>Baterista de Queen. Destaca por su energía, velocidad y potencia en el escenario.</p>
+    </div>
 
-    <script>
+</div>
 
-        document.addEventListener("click", function(e){
+<div class="botones">
+    <a href="momento2.html">⏮ Volver</a>
+    <a href="momento4.html">Siguiente ⏭</a>
+</div>
 
-            const nota = document.createElement("div");
+<script>
 
-            const simbolos = ["♪", "♫", "♩", "♬"];
 
-            nota.innerHTML =
-            simbolos[Math.floor(Math.random() * simbolos.length)];
+const emojis = ["⭐", "🤘", "🎵", "🥁"];
 
-            nota.style.position = "fixed";
-            nota.style.left = e.clientX + "px";
-            nota.style.top = e.clientY + "px";
+function crearEmoji(){
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
 
-            nota.style.fontSize = "35px";
-            nota.style.color = "yellow";
-            nota.style.pointerEvents = "none";
+    emoji.style.left = Math.random() * window.innerWidth + "px";
+    emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    emoji.style.fontSize = (Math.random() * 20 + 20) + "px";
 
-            nota.style.animation =
-            "subir 1.5s linear forwards";
+    document.body.appendChild(emoji);
 
-            document.body.appendChild(nota);
+    setTimeout(() => {
+        emoji.remove();
+    }, 5000);
+}
 
-            setTimeout(() => {
-                nota.remove();
-            }, 1500);
 
-        });
-
-    </script>
+setInterval(crearEmoji, 200);
+</script>
 
 </body>
-
 </html>

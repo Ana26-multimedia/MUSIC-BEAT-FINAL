@@ -53,3 +53,9 @@ kick.addEventListener("click", () => {
 
     audio.play();
 });
+
+let nombre= prompt("¿Cúal es tu nombre?");
+alert(`Hola, ${nombre}!`);
+
+
+saludo.innerText = "Listo para Rockear en Music-Beat, " + nombre;
