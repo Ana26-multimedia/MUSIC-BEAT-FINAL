@@ -4,21 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music-Beat</title>
 
     <style>
 
         body{
-              background-color: rgba(156, 9, 146, 0.875);
+            background-color: rgba(156, 9, 146, 0.875);
             font-family: Arial, Helvetica, sans-serif;
             color: white;
+            margin: 0;
+            padding: 0;
         }
 
         h1{
             text-align: center;
         }
 
+        .titulo{
 
-     .texto{
+            color: white;
+
+            font-size: 50px;
+
+            animation: brillo 1.5s infinite alternate;
+
+        }
+
+        @keyframes brillo{
+
+            from{
+                opacity: 0.7;
+                text-shadow: 0 0 5px white;
+            }
+
+            to{
+                opacity: 1;
+                text-shadow:
+                0 0 10px rgb(113, 181, 236),
+                0 0 20px rgb(113, 181, 236),
+                0 0 40px rgb(113, 181, 236);
+            }
+
+        }
+
+        .texto{
             width: 70%;
             margin: auto;
             text-align: center;
@@ -34,11 +63,9 @@
             margin-top: 120px;
         }
 
-
         .contenedor img{
             width: 100%;
         }
-
 
 
         .punto{
@@ -51,7 +78,8 @@
             border: 2px solid black;
         }
 
-       .comentario{
+
+        .comentario{
             display: none;
             position: absolute;
             background-color: white;
@@ -69,7 +97,42 @@
             display: inline-block;
             color: white;
             text-decoration: none;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-boton{
+
+            display: flex;
+
+            justify-content: center;
+
             margin-top: 50px;
+        }
+
+        .boton-sonidos{
+
+            background-color: rgb(113, 181, 236);
+
+            color: white;
+
+            font-size: 28px;
+
+            padding: 20px 40px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .boton-sonidos:hover{
+
+            background-color: rgb(85, 155, 212);
+
         }
 
     </style>
@@ -80,30 +143,45 @@
 
     <br>
 
-<h1 class="titulo">¡Bienvenid@s a Music-Beat! ✌︎㋡</h1>
-<br>
 
-   <center> <p>               En esta página, exploraremos datos curiosos de la batería, comprenderemos este instrumento y 
-    haremos que el querido usuario tenga una experiencia cercana y de aproximación a este maravillosos instrumento. 𐦂𖨆𐀪𖠋  </p></center> 
+    <h1 class="titulo">¡Bienvenid@s a Music-Beat! ✌︎㋡</h1>
+
+    <br>
+
+
+    <center>
+
+        <p>
+            En esta página, exploraremos datos curiosos de la batería,
+            comprenderemos este instrumento y haremos que el usuario
+            tenga una experiencia cercana a este maravilloso instrumento.
+        </p>
+
+    </center>
 
     <br>
     <br>
+
+    <!-- TEXTO -->
 
     <div class="texto">
 
-        <h2> ♪♫♪  ¿Qué es una batería?   ♬⋆.˚</h2>
+        <h2>♪♫♪ ¿Qué es una batería? ♬⋆.˚</h2>
 
         <p>
             La batería es un instrumento musical de percusión compuesto
             por tambores y platillos. Haz click en los puntos azules
-            para conocer las partes de la batería
+            para conocer las partes de la batería.
         </p>
 
     </div>
 
+
+
     <div class="contenedor">
 
         <img src="assets/bateria.png" alt="Drums">
+
 
 
         <div class="punto"
@@ -114,7 +192,7 @@
         id="c1"
         style="top: 60px; left: 120px;">
 
-        <b>Crash:</b> platillo usado para acentos fuertes.
+            <b>Crash:</b> platillo usado para acentos fuertes.
 
         </div>
 
@@ -127,12 +205,10 @@
         id="c2"
         style="top: 200px; left: 60px;">
 
-        <b>Hi-Hat:</b> platillos que marcan el ritmo.
+            <b>Hi-Hat:</b> platillos que marcan el ritmo.
 
         </div>
 
-
-   
 
         <div class="punto"
         style="top: 300px; left: 190px;"
@@ -142,7 +218,7 @@
         id="c3"
         style="top: 320px; left: 220px;">
 
-        <b>Redoblante:</b> tambor principal del ritmo.
+            <b>Redoblante:</b> tambor principal del ritmo.
 
         </div>
 
@@ -155,10 +231,9 @@
         id="c4"
         style="top: 180px; left: 310px;">
 
-        <b>Tom 1:</b> tambor agudo superior.
+            <b>Tom 1:</b> tambor agudo superior.
 
         </div>
-
 
         <div class="punto"
         style="top: 150px; left: 390px;"
@@ -168,10 +243,9 @@
         id="c5"
         style="top: 170px; left: 420px;">
 
-        <b>Tom 2:</b> segundo tom superior.
+            <b>Tom 2:</b> segundo tom superior.
 
         </div>
-
 
         <div class="punto"
         style="top: 390px; left: 320px;"
@@ -181,7 +255,7 @@
         id="c6"
         style="top: 410px; left: 350px;">
 
-        <b>Bombo:</b> produce los sonidos graves.
+            <b>Bombo:</b> produce los sonidos graves.
 
         </div>
 
@@ -194,7 +268,7 @@
         id="c7"
         style="top: 300px; left: 350px;">
 
-        <b>Floor Tom:</b> tambor grave lateral.
+            <b>Floor Tom:</b> tambor grave lateral.
 
         </div>
 
@@ -207,17 +281,34 @@
         id="c8"
         style="top: 110px; left: 350px;">
 
-        <b>Ride:</b> platillo usado para acompañamiento y marcar el ritmo.
+            <b>Ride:</b> platillo usado para acompañamiento y marcar el ritmo.
 
         </div>
 
     </div>
 
-    <br><br>
 
-    <a href="momento2.html" class="boton">
-        ⏭ Siguiente
-    </a>
+    <div class="contenedor-boton">
+
+        <button class="boton-sonidos" onclick="sonido()">
+            ¡Descubre cómo suena una batería real! 🥁
+        </button>
+
+    </div>
+
+
+
+    <audio id="audioBateria">
+        <source src="assets/Drums-only.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+        <a href="momento2.html" class="boton">
+            ⏭ Siguiente
+        </a>
+
+    </center>
 
     <script>
 
@@ -228,14 +319,24 @@
             if(comentario.style.display == "block"){
                 comentario.style.display = "none";
             }
+
             else{
                 comentario.style.display = "block";
             }
+
         }
 
-        
+        function sonido(){
+
+            let audio = document.getElementById("audioBateria");
+
+            audio.currentTime = 0;
+
+            audio.play();
+
+        }
+
     </script>
-    
 
 </body>
 

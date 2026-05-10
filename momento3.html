@@ -1,26 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grandes bateristas</title>
+
+    <style>
+
+        body{
+            background-color: rgba(156, 9, 146, 0.875);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 40px;
+
+            animation: brillo 1.5s infinite alternate;
+        }
+
+        @keyframes brillo{
+
+            from{
+                opacity: 0.7;
+                text-shadow: 0 0 5px white;
+            }
+
+            to{
+                opacity: 1;
+                text-shadow:
+                0 0 10px rgb(113, 181, 236),
+                0 0 20px rgb(113, 181, 236),
+                0 0 40px rgb(113, 181, 236);
+            }
+
+        }
+
+        .contenedor{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+
+        .card{
+            width: 300px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            transform: scale(1.05);
+        }
+
+        .card img{
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .card h2{
+            margin-top: 20px;
+            font-size: 30px;
+        }
+
+        .card p{
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+      
+
+        .botones{
+            margin-top: 60px;
+            padding: 20px 40px;
+        }
+
+        a{
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            margin-right: 40px;
+        }
+
+        a:hover{
+            color: yellow;
+        }
+
+     
+        @keyframes subir {
+
+            0%{
+                transform: translateY(0px);
+                opacity: 1;
+            }
+
+            100%{
+                transform: translateY(-120px);
+                opacity: 0;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body id="momento3">
 
-     <body style="background-color: rgba(156, 9, 146, 0.875);" ></body>
- 
-    <Center>  <h1> Etos son algunos de los grandes bateristas <h1> </Center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <a href="momento2.html" style="font-size: 30px; padding: 20px 40px; display: inline-block; color: white; text-decoration: none;">
-  ⏮ Volver 
-</a>
-       <br>
-     <br>
-     <br>
-     <br>
-     <a href="momento4.html" style="font-size: 30px; padding: 20px 40px; display: inline-block; color: white; text-decoration: none;">
-  Siguiente ⏭
-</a>
+    <h1>Estos son algunos de los grandes bateristas</h1>
+
+    <div class="contenedor">
+
+        <div class="card">
+
+            <img src="assets/Ringo Starr.png" alt="Ringo Starr">
+
+            <h2>Ringo Starr</h2>
+
+            <p>
+                Fue el baterista de The Beatles.
+                Es reconocido por su estilo simple,
+                creativo y muy influyente en la historia del rock.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <img src="assets/Phil Collins .png" alt="Phil Collins">
+
+            <h2>Phil Collins</h2>
+
+            <p>
+                Baterista y cantante de Genesis.
+                Es famoso por su técnica,
+                coordinación y grandes canciones.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <img src="assets/roger taylor.png" alt="Roger Taylor">
+
+            <h2>Roger Taylor</h2>
+
+            <p>
+                Baterista de Queen.
+                Destaca por su energía,
+                velocidad y potencia en el escenario.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- BOTONES -->
+
+    <div class="botones">
+
+        <a href="momento2.html">
+            ⏮ Volver
+        </a>
+
+        <a href="momento4.html">
+            Siguiente ⏭
+        </a>
+
+    </div>
+
+
+    <script>
+
+        document.addEventListener("click", function(e){
+
+            const nota = document.createElement("div");
+
+            const simbolos = ["♪", "♫", "♩", "♬"];
+
+            nota.innerHTML =
+            simbolos[Math.floor(Math.random() * simbolos.length)];
+
+            nota.style.position = "fixed";
+            nota.style.left = e.clientX + "px";
+            nota.style.top = e.clientY + "px";
+
+            nota.style.fontSize = "35px";
+            nota.style.color = "yellow";
+            nota.style.pointerEvents = "none";
+
+            nota.style.animation =
+            "subir 1.5s linear forwards";
+
+            document.body.appendChild(nota);
+
+            setTimeout(() => {
+                nota.remove();
+            }, 1500);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
