@@ -1,0 +1,141 @@
+body{
+            background-color: rgba(156, 9, 146, 0.875);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .titulo{
+
+            font-size: 50px;
+
+            margin-top: 40px;
+
+            animation: brillo 1.5s infinite alternate;
+
+        }
+
+        .subtitulo{
+
+            font-size: 24px;
+
+            margin-top: -10px;
+        }
+
+        @keyframes brillo{
+
+            from{
+                opacity: 0.7;
+                text-shadow: 0 0 5px white;
+            }
+
+            to{
+                opacity: 1;
+                text-shadow:
+                0 0 10px rgb(113, 181, 236),
+                0 0 20px rgb(113, 181, 236),
+                0 0 40px rgb(113, 181, 236);
+            }
+
+        }
+
+        img{
+
+            width: 40%;
+
+            margin-top: 40px;
+
+            border-radius: 20px;
+        }
+        .texto{
+
+            width: 70%;
+
+            margin: auto;
+
+            margin-top: 40px;
+
+            font-size: 22px;
+
+            line-height: 1.8;
+
+            background-color: rgba(255,255,255,0.1);
+
+            padding: 25px;
+
+            border-radius: 20px;
+        }
+
+        .contenedor-boton{
+
+            margin-top: 50px;
+        }
+
+        .boton-sonido{
+
+            background-color: rgb(113, 181, 236);
+
+            color: white;
+
+            border: none;
+
+            padding: 20px 40px;
+
+            font-size: 28px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .boton-sonido:hover{
+
+            background-color: rgb(83, 150, 205);
+
+        }
+
+        .botones{
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 50px;
+
+            margin-top: 80px;
+
+            margin-bottom: 40px;
+        }
+
+        a{
+
+            font-size: 30px;
+
+            color: white;
+
+            text-decoration: none;
+        }
+
+        a:hover{
+
+            color: yellow;
+        }
+
+        @keyframes subir {
+
+            0%{
+                transform: translateY(0px);
+                opacity: 1;
+            }
+
+            100%{
+                transform: translateY(-120px);
+                opacity: 0;
+            }
+
+        }

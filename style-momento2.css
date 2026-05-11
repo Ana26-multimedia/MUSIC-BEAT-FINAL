@@ -1,0 +1,119 @@
+
+
+        body{
+            background-color: rgba(156, 9, 146, 0.875);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: auto;
+            margin: 0;
+            padding: 0;
+            min-height: 170vh;
+        }
+
+        h1{
+            text-align: center;
+            margin-top: 40px;
+            font-size: 45px;
+        }
+
+        .mensaje{
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
+            animation: brillo 1s infinite alternate;
+        }
+
+        @keyframes brillo{
+
+            from{
+                opacity: 0.5;
+            }
+
+            to{
+                opacity: 1;
+            }
+
+        }
+        .contenido{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .datos{
+            width: 55%;
+            font-size: 22px;
+            line-height: 1.8;
+        }
+
+        .datos h2{
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .datos ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        .datos li{
+            margin-bottom: 20px;
+            background-color: rgba(255,255,255,0.1);
+            padding: 18px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .datos li:hover{
+            transform: scale(1.03);
+        }
+
+        .imagenes{
+            width: 35%;
+            text-align: center;
+        }
+
+        .imagenes img{
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .dibujo{
+            margin-top: 40px;
+        }
+
+        .dibujo img{
+            width: 80%;
+        }
+
+        .botones{
+            padding: 20px 40px;
+            margin-top: 80px;
+        }
+
+        a{
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            margin-right: 40px;
+        }
+
+        a:hover{
+            color: yellow;
+        }
+
+
+        @keyframes subir {
+
+            0%{
+                transform: translateY(0px);
+                opacity: 1;
+            }
+
+            100%{
+                transform: translateY(-120px);
+                opacity: 0;
+            }
+
+        }
