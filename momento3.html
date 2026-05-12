@@ -1,69 +1,119 @@
-]<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grandes bateristas</title>
-<link rel="stylesheet" href="style-momento3.css">
-   
+
+    <link rel="stylesheet" href="style-momento3.css">
 </head>
 
 <body id="momento3">
 
-<h1>Estos son algunos de los grandes bateristas</h1>
+    <h1>Estos son algunos de los grandes bateristas</h1>
 
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="card">
-        <img src="assets/Ringo Starr.png" alt="Ringo Starr">
-        <h2>Ringo Starr</h2>
-        <p>Fue el baterista de The Beatles. Es reconocido por su estilo simple, creativo y muy influyente en la historia del rock.</p>
+        <div class="card" data-audio="assets/ringo.mp3">
+            <img src="assets/Ringo Starr.png" alt="Ringo Starr">
+            <h2>Ringo Starr</h2>
+            <p>Fue el baterista de The Beatles. Es reconocido por su estilo simple, creativo y muy influyente en la historia del rock.</p>
+        </div>
+
+        <div class="card" data-audio="assets/phil.mp3">
+            <img src="assets/Phil Collins .png" alt="Phil Collins">
+            <h2>Phil Collins</h2>
+            <p>Baterista y cantante de Genesis. Es famoso por su técnica, coordinación y grandes canciones.</p>
+        </div>
+
+        <div class="card" data-audio="assets/roger.mp3">
+            <img src="assets/roger taylor.png" alt="Roger Taylor">
+            <h2>Roger Taylor</h2>
+            <p>Baterista de Queen. Destaca por su energía, velocidad y potencia en el escenario.</p>
+        </div>
+
     </div>
 
-    <div class="card">
-        <img src="assets/Phil Collins .png" alt="Phil Collins">
-        <h2>Phil Collins</h2>
-        <p>Baterista y cantante de Genesis. Es famoso por su técnica, coordinación y grandes canciones.</p>
+    <div class="botones">
+        <a href="momento2.html">⏮ Volver</a>
+        <a href="momento4.html">Siguiente ⏭</a>
     </div>
 
-    <div class="card">
-        <img src="assets/roger taylor.png" alt="Roger Taylor">
-        <h2>Roger Taylor</h2>
-        <p>Baterista de Queen. Destaca por su energía, velocidad y potencia en el escenario.</p>
-    </div>
+    <script>
 
-</div>
+        const emojis = ["⭐", "🤘", "🎵", "🥁"];
 
-<div class="botones">
-    <a href="momento2.html">⏮ Volver</a>
-    <a href="momento4.html">Siguiente ⏭</a>
-</div>
+        function crearEmoji() {
 
-<script>
+            const emoji = document.createElement("div");
 
+            emoji.classList.add("emoji");
 
-const emojis = ["⭐", "🤘", "🎵", "🥁"];
+            emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
 
-function crearEmoji(){
-    const emoji = document.createElement("div");
-    emoji.classList.add("emoji");
-    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * window.innerWidth + "px";
 
-    emoji.style.left = Math.random() * window.innerWidth + "px";
-    emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    emoji.style.fontSize = (Math.random() * 20 + 20) + "px";
+            emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
 
-    document.body.appendChild(emoji);
+            emoji.style.fontSize = (Math.random() * 20 + 20) + "px";
 
-    setTimeout(() => {
-        emoji.remove();
-    }, 5000);
-}
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+
+                emoji.remove();
+
+            }, 5000);
+        }
+
+        setInterval(crearEmoji, 200);
 
 
-setInterval(crearEmoji, 200);
-</script>
+        const cards = document.querySelectorAll(".card");
+
+        let audioActual = null;
+        let cardActual = null;
+
+        cards.forEach(card => {
+
+            card.addEventListener("click", () => {
+
+                const rutaAudio = card.dataset.audio;
+
+
+
+                if (audioActual && cardActual === card) {
+
+                    audioActual.pause();
+
+                    audioActual.currentTime = 0;
+
+                    audioActual = null;
+                    cardActual = null;
+
+                    return;
+                }
+
+                if (audioActual) {
+
+                    audioActual.pause();
+
+                    audioActual.currentTime = 0;
+                }
+        
+                audioActual = new Audio(rutaAudio);
+
+                audioActual.play();
+
+                cardActual = card;
+
+            });
+
+        });
+
+    </script>
 
 </body>
+
 </html>
